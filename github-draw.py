@@ -4,6 +4,10 @@ from PIL import Image
 import numpy as np
 import sys
 
+if len(sys.argv)==1:
+	print("Please run this script with a console command, passing a path to a monochrome bmp image.")
+	exit()
+
 def last_sunday(d): #get last sunday
 	if d.weekday() == 6:
 		return d
