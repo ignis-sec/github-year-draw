@@ -15,6 +15,8 @@ Draw an image to your github commit summary
  - Chose whether or not to give it your github username (will be used to polish out collisions with your previous commits if possible)
  - Follow the y/n questions.
  - Sit back, or go get a coffee. This might take 3-10 minutes depending on your intensity.
+ - New repository is created under git-art in the same folder. Publish it in github to alter the commit history
+ - Be patient, it might take another 5-10 minutes for github do update your commit summary after pushing.
  
 # Why does this need my user id?
 So it can work around your current contributions. Check out the outline of space invader on the example below.
