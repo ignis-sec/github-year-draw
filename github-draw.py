@@ -14,7 +14,8 @@ info="[\033[94m+\033[0m]"
 
 if len(sys.argv)==1:
 	print("Example Usage:")
-	print(f"python3 {os.path.basename(__file__)} <filename>")
+	print(f"python3 {os.path.basename(__file__)} <filename> <intensity>?")
+	print("Higher intensity will take longer to process, but will look better. Default is 20. Max is 255")
 	exit()
 
 
@@ -39,7 +40,8 @@ if(im.size[0]!=52 or im.size[1]!=7):
 	confirm = input(">>>")
 	if(confirm=='Y' or confirm=='y'):
 		print(f"{info} Resizing image.")
-		pass
+		im = im.resize((52, 7))
+		print(f"New image size {im.size[0]}x{im.size[1]}")
 	else:
 		print(f"{fail} Quitting.")
 		exit(1)
