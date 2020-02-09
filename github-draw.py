@@ -52,6 +52,9 @@ def preview():
 				print(c + " ", end='')
 			print(bg.rs)
 
+def scaleIntensity(c,_intensity):
+    return int((255-c)/255*_intensity)
+
 #find the starting point of github yearly activity
 d = datetime.datetime.today()
 last_Sunday = last_sunday(d) 
@@ -76,7 +79,9 @@ if(im.size[0]!=52 or im.size[1]!=7):
 else:
 	pix = np.asarray(im)
 	preview()
-exit()
+
+
+
 
 i=0
 intensity=20
@@ -87,10 +92,17 @@ print(f"{info} Intensity set to {intensity}")
 with open("temp.txt", "a") as myfile:
 	for x in range(0, 52):
 		for y in range(0,7):
-			if im[y][x]!=255:#dont commit on empty days
-				for n in range(0,math.floor((255-p[x][y])/10)): #commit according to color
-					#print(n)
-					myfile.write("1") #need changes for github commit to go through
-					myfile.flush()
+			if pix[y][x]!=255:#dont commit on empty days
+				c=scaleIntensity(pix[y][x],intensity)
+				print(c, end=', ')
+				for n in range(c): #commit according to color
+					print(scaleIntensity(pix[y][x],intensity), end=', ')
+					break
+					#myfile.write("1") #need changes for github commit to go through
+					#myfile.flush()
 					#call('git commit -a -m "Commit"' + str(i) + ' --date="'+ str(gitlog_start+datetime.timedelta(x*7+y)) +'"') 
 					i=i+1
+			else:
+				print('0', end=', ')
+				pass		
+		print()
