@@ -1,14 +1,20 @@
 # github-year-draw
-draw a grayscale bmp to your github yearly activity
+Draw an image to your github commit summary
 
-### run with console arguement: file path for bmp and your github id.
+### Example run
+
+`githubDraw.py <image filename>`
+
+`githubDraw.py <image filename> <intensity>`
+
 
 # How to use
- - Import neccessary modules with pip
- - create an empty git repository, put a bmp image and a "temp.txt" in your repository. bmp image should be 52x7
- - Copy the script to your git repository
- - run the script with path to your image and your github id.
-
+ - Install requests, pillow, numpy via pip
+ - Run the script as the examples above.
+ - Chose whether or not to give it your github username (will be used to polish out collisions with your previous commits if possible)
+ - Follow the y/n questions.
+ - Sit back, or go get a coffee. This might take 3-10 minutes depending on your intensity.
+ 
 # Why does this need my user id?
 So it can work around your current contributions. Check out the outline of space invader on the example below.
 
@@ -17,3 +23,6 @@ So it can work around your current contributions. Check out the outline of space
 
 ## After  old contribution checking:
 ![After](https://i.imgur.com/lbyAM4Q.jpg)
+
+
+
