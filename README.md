@@ -7,6 +7,7 @@ Draw an image to your github commit summary
 
 `githubDraw.py <image filename> <intensity>`
 
+![Imgur](https://i.imgur.com/2ciuq73.png)
 
 # How to use
  - Install requests, pillow, numpy via pip
