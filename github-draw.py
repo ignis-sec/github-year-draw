@@ -1,5 +1,6 @@
 from subprocess import call
 import datetime 	
+import platform
 from PIL import Image
 import numpy as np
 import sys
@@ -195,7 +196,12 @@ with open("temp.txt", "a") as myfile:
 					#need changes for github commit to go through
 					myfile.write("1") 
 					myfile.flush()
-					call('git commit -a -m "Commit"' + str(i) + ' --date="'+ str(gitlog_start+datetime.timedelta(x*7+y)) +'"') 
+					commit = 'git commit -a -m "Commit"' + str(i) + ' --date="'+ str(gitlog_start+datetime.timedelta(x*7+y)) +'"'
+					explorating_sytem = platform.system()
+					if explorating_sytem.lower() == 'linux':
+						os.system(commit)
+					else:
+						call(commit)
 					i=i+1
 			else:
 				print('0', end=', ')
